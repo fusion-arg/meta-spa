@@ -18,7 +18,7 @@ COPY --from=build /app /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN sed -i 's/<port>/80/g' /etc/nginx/nginx.conf
+RUN sed -i 's/<port>/8080/g' /etc/nginx/nginx.conf
 RUN sed -i 's/<url>/example.com/g' /etc/nginx/nginx.conf
 RUN sed -i 's|<DIR>|/usr/share/nginx/html|g' /etc/nginx/nginx.conf
 
