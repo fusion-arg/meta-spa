@@ -18,19 +18,15 @@ COPY --from=build /app /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx && chgrp -R root /var/cache/nginx
-
-RUN sed -i 's/<port>/8080/g' /etc/nginx/nginx.conf
-RUN sed -i 's/<url>/example.com/g' /etc/nginx/nginx.conf
-RUN sed -i 's|<DIR>|/usr/share/nginx/html|g' /etc/nginx/nginx.conf
-
-RUN addgroup nginx root
+RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx && chgrp -R root /var/cache/nginx && \
+    sed -i 's/<port>/8080/g' /etc/nginx/nginx.conf && \
+    sed -i 's/<url>/example.com/g' /etc/nginx/nginx.conf && \
+    sed -i 's|<DIR>|/usr/share/nginx/html|g' /etc/nginx/nginx.conf && \
+    addgroup nginx root 
 
 EXPOSE 8080
 
 USER nginx
-
-RUN chmod -R 777 /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
 
