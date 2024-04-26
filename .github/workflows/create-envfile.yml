@@ -1,6 +1,9 @@
 name: Create envfile
 
-on: [ push ]
+on:
+  push:
+    branches:
+      - "master"
 
 jobs:
 
