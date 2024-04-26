@@ -9,16 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - 
-        name: Make envfile
-        uses: SpicyPizza/create-envfile@v2.0
+      - name: Create .env file
+        uses: ozaytsev86/create-env-file@v1
         with:
-          envkey_VITE_MS_AUTH_API_URL: "https://ms-auth-meta-ms.apps.ocp01.sbox.fusion.com.ar"
-          envkey_VITE_MS_PROJECTS_API_URL: "estoy probando a ver si anda"
-          envkey_VITE_MS_PROCESSES_API_URL: "https://ms-process-meta-ms.apps.ocp01.sbox.fusion.com.ar" 
-          envkey_VITE_MS_ORGANIZATION_API_URL: "https://ms-organization-meta-ms.apps.ocp01.sbox.fusion.com.ar" 
-          envkey_VITE_MS_SURVEYS_API_URL: "https://ms-surveys-meta-ms.apps.ocp01.sbox.fusion.com.ar"
-          file_name: .env
+          ENV_TEST_ENV: ${{ secrets.TEST_ENV }}
       -
         name: Checkout
         uses: actions/checkout@v4
