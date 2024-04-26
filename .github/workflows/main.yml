@@ -30,4 +30,4 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/meta-spa:latest
           build-args: |
-            TEST_JAVITO = 123
+            TEST_JAVITO=123
