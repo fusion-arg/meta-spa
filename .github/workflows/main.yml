@@ -29,4 +29,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/meta-spa:latest
-          build-args: TEST_JAVITO = ${{ secrets.TEST_ENV }}
+          build-args: |
+            TEST_JAVITO = 123
