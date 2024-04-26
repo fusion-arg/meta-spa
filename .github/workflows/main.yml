@@ -9,10 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create .env file
-        uses: ozaytsev86/create-env-file@v1
-        with:
-          ENV_TEST_ENV: 'probando'
       -
         name: Checkout
         uses: actions/checkout@v4
