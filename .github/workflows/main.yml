@@ -30,9 +30,9 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/meta-spa:latest
           build-args: |
-              - VITE_MS_AUTH_API_URL=${{ VITE_MS_AUTH_API_URL }}
-              - VITE_MS_ORGANIZATION_API_URL=${{ VITE_MS_ORGANIZATION_API_URL }}
-              - VITE_MS_PROCESSES_API_URL=${{ VITE_MS_PROCESSES_API_URL }}
-              - VITE_MS_PROJECTS_API_URL=${{ VITE_MS_PROJECTS_API_URL }}
-              - VITE_MS_SURVEYS_API_URL=${{ VITE_MS_SURVEYS_API_URL }}
+              VITE_MS_AUTH_API_URL=${{ VITE_MS_AUTH_API_URL }},
+              VITE_MS_ORGANIZATION_API_URL=${{ VITE_MS_ORGANIZATION_API_URL }},
+              VITE_MS_PROCESSES_API_URL=${{ VITE_MS_PROCESSES_API_URL }},
+              VITE_MS_PROJECTS_API_URL=${{ VITE_MS_PROJECTS_API_URL }},
+              VITE_MS_SURVEYS_API_URL=${{ VITE_MS_SURVEYS_API_URL }}
 
