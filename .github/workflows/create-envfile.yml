@@ -20,7 +20,6 @@ jobs:
         envkey_SECRET_KEY: ${{ secrets.TEST_ENV }}
         envkey_VARIABLE: '123'
         some_other_variable: foobar
-        directory: meta-spa
         file_name: .env
         fail_on_empty: false
         sort_keys: false
