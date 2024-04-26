@@ -1,0 +1,18 @@
+name: Create envfile
+
+on: [ push ]
+
+jobs:
+
+  create-envfile:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v2.0
+      with:
+        envkey_DEBUG: false
+        envkey_TEST:ENV: "123456abcdef"
+        envkey_TEST_ENV_SECRET: ${{ secrets.TEST_ENV }}
+        file_name: .env
