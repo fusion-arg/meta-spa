@@ -8,6 +8,13 @@ COPY package*.json ./
 
 RUN npm install
 
+ENV RUN_TIME=123 
+ENV RUN_TIME3=13 
+ENV RUN_TIME2=5 
+
+RUN touch .env
+RUN printenv > .env
+
 COPY . .
 
 RUN npm run build
