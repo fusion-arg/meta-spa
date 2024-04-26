@@ -12,7 +12,7 @@ jobs:
       - name: Create .env file
         uses: ozaytsev86/create-env-file@v1
         with:
-          ENV_TEST_ENV: ${{ secrets.TEST_ENV }}
+          ENV_TEST_ENV: 'probando'
       -
         name: Checkout
         uses: actions/checkout@v4
