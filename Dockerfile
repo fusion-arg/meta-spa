@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install
 
 ARG TEST_JAVITO
-ENV TEST_JAVITO = $TEST_JAVITO 
+ENV TEST_JAVITO = ${TEST_JAVITO} 
 
 RUN touch .env
 RUN printenv > .env
