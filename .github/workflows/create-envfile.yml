@@ -1,15 +1,23 @@
 name: Create envfile
 
-on:
-  push:
-    branches:
-      - master
-jobs: 
-  create_env_file_job:
+on: [ push ]
+
+jobs:
+
+  create-envfile:
+ 
     runs-on: ubuntu-latest
+ 
     steps:
-      - name: Create .env file
-        uses: ozaytsev86/create-env-file@v1
-        with:
-          ENV_TEST_ENV: ${{ secrets.TEST_ENV }}
-          ENV_TEST_ENV_TWO: 'por favor andaaaaa'
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v2.0
+      with:
+        envkey_DEBUG: false
+        envkey_SOME_API_KEY: "123456abcdef"
+        envkey_SECRET_KEY: ${{ secrets.TEST_ENV }}
+        envkey_VARIABLE: '123'
+        some_other_variable: foobar
+        directory: meta-spa
+        file_name: .env
+        fail_on_empty: false
+        sort_keys: false
